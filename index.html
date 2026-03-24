@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Business Assistant</title>
+<style>
+body { font-family: Arial; margin:0; background:#0f172a; color:#fff; }
+header { padding:20px; text-align:center; background:#020617; }
+h1 { margin:0; }
+.container { padding:20px; }
+.card { background:#1e293b; padding:20px; margin:15px 0; border-radius:10px; }
+button { padding:10px 20px; border:none; border-radius:5px; cursor:pointer; }
+input, textarea { width:100%; padding:10px; margin:5px 0; border-radius:5px; border:none; }
+.preview { background:#fff; color:#000; padding:20px; margin-top:10px; border-radius:10px; }
+</style>
+</head>
+<body>
+<header>
+<h1>AI Business Assistant</h1>
+<p>Grow Your Shop with AI 🚀</p>
+</header>
+
+<div class="container">
+
+<div class="card">
+<h2>Poster Generator</h2>
+<input id="shopName" placeholder="Shop Name">
+<input id="offer" placeholder="Offer (e.g. 50% OFF)">
+<button onclick="generatePoster()">Generate Poster</button>
+<div id="poster" class="preview"></div>
+</div>
+
+<div class="card">
+<h2>Product Enhancer</h2>
+<input id="productName" placeholder="Product Name">
+<textarea id="productDesc" placeholder="Description"></textarea>
+<button onclick="enhanceProduct()">Enhance</button>
+<div id="enhanced" class="preview"></div>
+</div>
+
+<div class="card">
+<h2>WhatsApp Marketing</h2>
+<input id="washop" placeholder="Shop Name">
+<input id="waoffer" placeholder="Offer">
+<button onclick="generateWhatsApp()">Generate Message</button>
+<div id="wamessage" class="preview"></div>
+</div>
+
+<div class="card">
+<h2>Sales Tips</h2>
+<button onclick="salesTips()">Get Tips</button>
+<div id="tips" class="preview"></div>
+</div>
+
+</div>
+
+<script>
+function generatePoster(){
+ let shop = document.getElementById('shopName').value;
+ let offer = document.getElementById('offer').value;
+ document.getElementById('poster').innerHTML = `\n <h2>${shop}</h2>\n <p><b>${offer}</b></p>\n <p>Visit Today!</p>`;
+}
+
+function enhanceProduct(){
+ let name = document.getElementById('productName').value;
+ let desc = document.getElementById('productDesc').value;
+ document.getElementById('enhanced').innerHTML = `\n <h3>${name}</h3>\n <p>${desc}</p>\n <p><b>High Quality | Best Price | Limited Stock</b></p>`;
+}
+
+function generateWhatsApp(){
+ let shop = document.getElementById('washop').value;
+ let offer = document.getElementById('waoffer').value;
+ document.getElementById('wamessage').innerText = `${shop} me ${offer} chal raha hai! Aaj hi visit kare!`;
+}
+
+function salesTips(){
+ let tips = [
+ "Daily WhatsApp status lagao",
+ "Customer ko discount do",
+ "Festival offers rakho",
+ "Shop clean rakho",
+ "Online promotion karo"
+ ];
+ document.getElementById('tips').innerHTML = tips.join('<br>');
+}
+</script>
+
+</body>
+</html>
